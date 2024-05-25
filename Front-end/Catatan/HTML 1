@@ -1,0 +1,42 @@
+Catatan pertama : HTML
+
+=> HTML adalah bahasa mark-up yg dipakai untuk menciptakan website. Mark-up artinya penanda. 
+   HTML bersifat case-insensitive, artinya penggunaan kapital tidak berpengaruh terhadap fungsionalitas kode.
+   
+    => Struktur kebahasaan HTML :
+        - Header
+        - Body
+        - Footer
+        
+    => Unsur kebahasaan HTML terdiri atas :
+        - tag
+          -> tag (tanda) adalah penanda dimulai/berakhirnya sebuah elemen.
+             tag diapit dengan "<" dan ">".
+             tag terdiri dari dua jenis, yakni "paired (sepasang)" dan "unpaired (tunggal)".
+             tag sepasang / paired tag terdiri atas "tag pembuka (open tag)" dan "tag penutup".
+               -> tag penutup ditandai dengan "/"
+               
+             contoh :
+                 -- <html></html> (tag sepasang/paired tag)
+                 -- <!DOCTYPE> (tag tunggal/unpaired tag)
+                 -- <h1>  (tag pembuka dalam tag "h1")
+                 -- </h1> (tag penutup dalam tag "h1")
+                 
+        - atribut
+          -> atribut adalah sifat yang ditaruh ke dalam tag, supaya tag tersebut memiliki variasi.
+             atribut memberikan dan sekaligus menyimpan informasi tentang elemen.
+             atribut biasanya terdiri atas satu kata (bisa lebih), dan terletak di sebelah kanan tag pembuka.
+             contoh :
+                 -- src , seperti di dalam "<img src="...">
+                 -- class , seperti di dalam "<div class="...">
+                 
+        - value (nilai)
+          -> value/nilai adalah keterangan yang menjelaskan sifat/jenis variasi yang akan dimasukkan ke dalam atribut, dan akan diimplementasikan ke elemen.
+             Secara bersama-sama, value dan atribut menjelaskan sekaligus menyimpan informasi tentang hal yang ingin diimplementasikan oleh elemen.
+             value biasanya diapit dengan tanda petik dua ("..."), tapi bisa juga diapit dengan petik satu ('...').
+               -> p.s. : petik satu digunakan jika di dalam value dibutuhkan petik dua, sebaliknya petik dua bisa digunakan ketika petik satu dibutuhkan di dalam value
+                         e.g. : <img class="judul 'Laskar Pelangi' " (benar)   | <img class="Judul "Laskar Pelangi" " (salah, karena sistem akan mendeteksi dua value yg berbeda "judul" dan " ")
+                                <img class='Judul "Sherlock Holmes" ' (benar)  | <img class='Judul 'Sherlock Holmes' ' (salah, alasan sama kayak diatas ini).
+        - elemen
+          -> elemen
+        - properti
