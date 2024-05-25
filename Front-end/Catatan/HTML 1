@@ -32,11 +32,72 @@ Catatan pertama : HTML
                  
         - value (nilai)
           -> value/nilai adalah keterangan yang menjelaskan sifat/jenis variasi yang akan dimasukkan ke dalam atribut, dan akan diimplementasikan ke elemen.
+             Singkatnya, value adalah isi atribut.
              Secara bersama-sama, value dan atribut menjelaskan sekaligus menyimpan informasi tentang hal yang ingin diimplementasikan oleh elemen.
              value biasanya diapit dengan tanda petik dua ("..."), tapi bisa juga diapit dengan petik satu ('...').
                -> p.s. : petik satu digunakan jika di dalam value dibutuhkan petik dua, sebaliknya petik dua bisa digunakan ketika petik satu dibutuhkan di dalam value
-                         e.g. : <img class="judul 'Laskar Pelangi' " (benar)   | <img class="Judul "Laskar Pelangi" " (salah, karena sistem akan mendeteksi dua value yg berbeda "judul" dan " ")
-                                <img class='Judul "Sherlock Holmes" ' (benar)  | <img class='Judul 'Sherlock Holmes' ' (salah, alasan sama kayak diatas ini).
+                         e.g. : -- <img class="judul 'Laskar Pelangi' " (benar)   | <img class="Judul "Laskar Pelangi" " (salah, karena sistem akan mendeteksi dua value yg berbeda ["judul" dan " "] )
+                                -- <img class='Judul "Sherlock Holmes" ' (benar)  | <img class='Judul 'Sherlock Holmes' ' (salah, alasan sama kayak diatas ini).
+            contoh :
+               -- text, seperti di dalam <input type="text">
+               -- utf-8, seperti di dalam <meta charset="utf-8">
+
         - elemen
-          -> elemen
+          -> elemen adalah gabungan antara tag, atribut, dan value. Singkatnya, elemen adalah semua hal yang ada diantara tanda "<" dan ">"
+             contoh :
+               -- <label for="namaPengguna" class="form-label">Masukkan nama pengguna :</label>
+                  --> disini ' label for="namaPengguna" class="form-label" ' adalah elemen tag pembuka
+                             ' Masukkan nama pengguna ' bukanlah elemen melainkan content atau isi
+                             ' /label ' adalah elemen tag penutup
+
         - properti
+          -> Properti adalah sebuah atribut yang diakses melalui DOM (Document Object Model) Javascript.
+             Properti hampir sama dengan Atribut pada HTML, namun mereka sebenarnya berbeda.
+             Properti terletak di dalam kode Javascript, sedangkan Atribut di dalam HTML.
+
+             Pada saat kode HTML diuraikan oleh sistem menggunakan Javascript, HTMLInputElement akan membuat objek-objek yang memiliki properti.
+               -> beberapa contoh properti objek pada HTMLInputElement adalah accept, accessKey, align, alt, attributes, autofocus, baseURI, dlsb.
+             
+             Beberapa Node (proses kerja) pada DOM menggunakan Properti dengan istilah yang sama dengan Atribut.
+             contoh :
+               -- <a href="google.com" class="linkToGoogle" id="google-1"> , "href" , "class", dan "id" adalah atribut.
+               -- pada saat kode diatas diuraikan menggunakan HTMLInputElement, javascript akan menguraikan atribut seperti contoh dibawah
+                  
+                  -=- const myLink = document.querySelector('a');
+                  -=- const linkHref = myLink.getAttribute('href');
+                  -=- console.log(linkHref);
+                  -=-
+                  -=- myLink.href = 'google.com';
+
+                  pada baris kode diatas, 'a' dan 'href' adalah properti yang sedang dimanipulasi oleh Javascript.
+                  properti 'a' dan 'href' berkaitan dengan tag 'a' dan atribut 'href', namun tidak secara langsung.
+
+============================================================================================================================================
+=========================== -------------------------------------------------------------------------- =====================================
+                  
+                                                            TAG PADA HTML
+
+<!--  -->                   Tag untuk comment.
+                                -> comment tidak akan muncul di web saat di running.
+                                -> shortcut comment adalah CTRL K + CTRL C untuk menambahkan, dan CTRL K + CTRL U untuk menghilangkan comment
+            
+<!DOCTYPE>                  Tag untuk mendeklarasikan tipe dokumen.
+                                -> pada HTML5, cukup menambahkan value "html" saja "<!DOCTYPE html>".
+                                -> pada HTML4 atau XHTML, perlu ditambahkan keterangan yang ribet.
+                                -> shortcut untuk tag ini pada vscode adalah "!" lalu tekan Tab.
+            
+<a> ... </a>                (Anchor) Tag untuk mendeklarasikan hyperlink.
+                                -> Atribut yang biasa dipakai :
+                                    - href
+            
+<abbr> ... </abbr>          (Abbreviation) Tag untuk memunculkan kepanjangan dari singkatan ketika mouse diarahkan ke kata tertentu.
+                                -> biasa digunakan di dalam tag "<dfn> ... </dfn>"
+            
+<address> ... <address/>    Tag untuk menandakan alamat tempat tinggal.
+                                -> Tag ini bersifat semantik (hanya untuk penanda kebahasaan)
+                                -> akan memunculkan teks biasa yang dicetak miring (italic)
+
+
+
+
+
